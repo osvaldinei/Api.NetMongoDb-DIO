@@ -1,14 +1,15 @@
 using System;
+using MongoDB.Driver.GeoJsonObjectModel;
 
 namespace Api_Mongo.Data.Collections
 {
-    public class infectado
+    public class Infectado
     {
-        public infectado(DateTime dataNascimento, string sexo, double latitude, double longitude)
+        public Infectado(DateTime dataNascimento, string sexo, double latitude, double longitude)
         {
             this.DataNascimento = dataNascimento;
             this.Sexo = sexo;
-            this.Localizacao = new GeoJson2dGeographicCoordinates(longitude, latitude);
+            this.Localizacao = new GeoJson2DGeographicCoordinates(longitude, latitude);
 
         }
 
@@ -16,7 +17,7 @@ namespace Api_Mongo.Data.Collections
 
         public string Sexo {get; set;}
 
-        public GeoJson2dGeographicCoordinates Localizacao {get; set;}
+        public GeoJson2DGeographicCoordinates Localizacao {get; set;}
 
 
 
